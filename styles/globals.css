@@ -2,26 +2,55 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+
+    background-color: hsl(216, 12%, 8%);
+}
+h1,p,span{
+
+}
+p{
+    font-size:15px
+}
+
+.container{
+    @apply bg-darkBlue w-[340px] px-4 py-4 h-72 flex flex-col justify-center  gap-4 rounded-2xl
+    xl:w-[380px] xl:h-[380px] xl:gap-6 xl:px-6
+}
+.rateButton{
+    @apply bg-mediumGrey/30 w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold
+    text-lightGrey xl:hover:bg-lightGrey xl:hover:text-white cursor-pointer
+}
+.rateTextContainer{
+@apply flex flex-col text-left gap-2
+}
+.rateTextContainer h1{
+@apply text-white font-bold text-xl
+}
+.rateTextContainer p{
+@apply text-mediumGrey text-[15px] xl:text-[14px] 
+}
+.selected{
+    @apply bg-orange w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold
+    text-white
+}
+.btnSubmit{
+    @apply bg-orange w-full rounded-full h-10 text-white tracking-widest text-xs  font-bold xl:h-8
+    xl:hover:bg-white xl:hover:text-orange
+}
+
+.thankyouContainer {
+    @apply bg-darkBlue w-[340px] px-4 py-4 h-72 flex flex-col justify-center gap-6 rounded-2xl
+    xl:w-[380px] xl:h-[380px] xl:gap-6 xl:px-6 items-center 
+}
+.thankyouText{
+    @apply flex flex-col justify-center gap-2 text-center
+}
+.thankyouText h1{
+    @apply text-white text-xl
+}
+.thankyouText p{
+    @apply text-lightGrey
 }
